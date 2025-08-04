@@ -812,8 +812,35 @@ def cotacao_agriplanmga():
         return {"ERRO": f"Erro ao processar dados da Agriplanmga: {str(e)}", "url": url}
 
 
-
-
+def cotacao_coagru():
+    url = 'https://www.coagru.com.br/'
+    try:
+        response = requests.get(url, timeout=10 )
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        return {"ERRO": f"Não foi possível acessar os dados da Coagru: {str(e)}", "url": url}
+    html = response.text
+    soup = BeautifulSoup(html, 'html.parser')
+    try:
+        data_hoje = date.today()
+        data_ptBR = data_hoje.strftime("%d/%m/%Y")
+        price = soup.find_all('td', colspan='3')
+        if len(price) >= 3:
+            milho = extrair_price(price[2].get_text(strip=True)) if price[2] else "N/A"
+            soja = extrair_price(price[1].get_text(strip=True)) if price[1] else "N/A"
+        else:
+            soja = milho = "Mercado está fechado"
+        return {
+            "Data": data_ptBR,
+            "Milho": milho,
+            "Soja": soja,
+            "url": url,
+            "Fonte": "Coagru",
+            "Estado": "Paraná",
+            "Cidade": "Cascavel"
+        }
+    except Exception as e:
+        return {"ERRO": f"Erro ao processar dados da Coagru: {str(e)}", "url": url}
 
 #.......................................................................................................................................................
 #.......................................................................................................................................................
@@ -872,6 +899,7 @@ def home():
             # CASCAVEL
             "/cotacao/agricolagemelli", # PARANÁ / Cascavel
             "/cotacao/plantarnet", # PARANÁ / Cascavel
+            "/cotacao/coagru", #PARANÁ / Cascavel
             # MARINGÁ
             "/cotacao/agriplanmga", # PARANÁ / Maringá
             #///////////////////////////////////////////////////////////////
@@ -1035,7 +1063,10 @@ def api_cotacao_agriplanmga():
     return jsonify(resultado)
 
 
-
+@app.route('/cotacao/coagru', methods=['GET'])
+def api_cotacao_coagru():
+    resultado = cotacao_coagru()
+    return jsonify(resultado)
 
 
 #.......................................................................................................................................................
@@ -1141,7 +1172,8 @@ def api_cotacao_ijui():
 def api_cotacao_cascavel():
     return jsonify({
         "agricolagemelli": cotacao_agricolagemelli(), # PARANÁ / Cascavel
-        "plantarnet": cotacao_plantarnet() # PARANÁ / Cascavel
+        "plantarnet": cotacao_plantarnet(), # PARANÁ / Cascavel
+        "coagru": cotacao_coagru() # PARANÁ / Cascavel
     })
 
 
@@ -1194,6 +1226,7 @@ def api_cotacao_todas():
         # PARANÁ
         "agricolagemelli": cotacao_agricolagemelli(), # PARANÁ / Cascavel
         "plantarnet": cotacao_plantarnet(), # PARANÁ / Cascavel
+        "coagru": cotacao_coagru(), # PARANÁ / Cascavel
         "agriplanmga": cotacao_agriplanmga(), # PARANÁ / Maringá
         "camposverdes": cotacao_camposverdes() # PARANÁ / Maringá
 
