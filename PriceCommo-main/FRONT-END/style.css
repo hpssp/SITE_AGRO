@@ -1,0 +1,328 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #d1d1d1;
+    padding: 20px;
+    margin: 20px;
+}
+
+header {
+    background: linear-gradient(to right, #01595c, #00025e);
+    color: white;
+    width: auto;
+    padding: 1rem 7rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-size: 1.1rem;
+    float: right;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+p {
+    color: #2c3e50;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    float: right;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.download-btn:hover {
+    background-color: #45a049;
+}
+
+.botoes-cidade {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.botao-personalizado {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #007bff, #004bff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-personalizado:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(to right, #0056b3, #002f80);
+}
+
+
+
+.titulo {
+    color: #2c3e50;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.RS,
+.PR,
+.MGS {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #0c3d91, #00a6ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+.ecidades {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background: linear-gradient(to left, #007b5e, #00b894);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.subtitulo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #8e44ad, #3498db);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.agro_sites {
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(to left, rgb(0, 116, 15), rgb(106, 114, 0), rgb(0, 97, 5));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+
+.gradiente-cidade {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background: linear-gradient(to left, #007b5e, #00b894);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.empresa {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.empresa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.empresa h2 {
+    margin: 0 0 10px;
+    background: linear-gradient(to right, #0c3d91, #00a6ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+.empresa h3 {
+    margin-top: 10px;
+    color: #0060a0;
+}
+
+.valores {
+    margin-top: 5px;
+}
+
+.valores span {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.dev-card {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.dev-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.dev-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 100px;
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.controles {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #1e7e34;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.file-input {
+    display: none;
+}
+
+.status {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.status.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.contador {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .controles {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
